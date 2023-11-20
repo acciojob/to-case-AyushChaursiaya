@@ -1,16 +1,50 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+    <title>toCase Function</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <h1>toCase Function Example</h1>
+    
+    <script>
+        function toCase(inputString) {
+            if (!inputString) {
+                return '-';
+            }
 
+            const lowercase = inputString.toLowerCase();
+            const uppercase = inputString.toUpperCase();
+
+            return `${lowercase}-${uppercase}`;
+        }
+
+        function processInput() {
+            const inputElement = document.getElementById('input');
+            const outputElement = document.getElementById('output');
+
+            const inputValue = inputElement.value;
+            const result = toCase(inputValue);
+
+            outputElement.textContent = `Output: ${result}`;
+        }
+    </script>
+
+    <label for="input">Enter a string:</label>
+    <input type="text" id="input" oninput="processInput()">
+
+    <div id="output"></div>
 </body>
-
 </html>
